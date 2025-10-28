@@ -13,6 +13,15 @@ const resolvers ={
         },
         authors(){
             return db.authors
+        },
+        review(_,args){
+            return db.reviews.find((review) => review.id === args.id)
+        },
+        game(_,args){
+            return db.game.find((game) => game.id === args.id)
+        },
+        author(_,args){
+            return db.reviews.find((author) => author.id === args.id)
         }
     }
 }
@@ -28,4 +37,5 @@ const {url} = await startStandaloneServer(server,{
 })
 
 console.log('Server ready at port', 4000)
+
 
