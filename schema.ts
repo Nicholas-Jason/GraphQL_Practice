@@ -27,4 +27,8 @@ type Query ={
     authors: [Author]
     author(id: Number): Author
 }
+type Mutation={
+    deleteGame(id: Number): [Game],
+    addGame(title: String,platform: [String],reviews: [Review]): Game
+    }
 
